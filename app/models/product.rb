@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   private
 
   def invalid_products_sizes?(attributed)
+    return true if attributed[:is_enable].to_i != 1
     return true if attributed[:size_id].to_i <= 0
     return true if attributed[:price].to_i <= 0
   end

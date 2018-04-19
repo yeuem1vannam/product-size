@@ -16,9 +16,10 @@
     <%= form.text_field :name %>
   </div>
   <%= form.fields_for :products_sizes do |field| %>
+    <%= field.hidden_field :size_id %>
     <div class="field">
-      <%= field.label :size_id, field.object.name %>
-      <%= field.check_box :size_id %>
+      <%= field.label :is_enable, field.object.size_name %>
+      <%= field.check_box :is_enable %>
     </div>
     <div class="field">
       <%= field.label :price %>
